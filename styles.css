@@ -1,0 +1,226 @@
+@font-face {
+    font-family: 'Fortnite';
+    src: url('font/Fortnite.ttf') format('truetype');
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fortnite', sans-serif;
+}
+
+body {
+    background-image: url('img/desktop_bg.png');
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+}
+
+.left-button,
+.right-button {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-49 {
+    width: 200px;
+    height: 100px;
+    line-height: 100px;
+    font-size: 24px;
+    font-family: 'Fortnite', sans-serif;
+    background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+    border: 0;
+    color: #fff;
+    letter-spacing: 3px;
+    box-shadow: 6px 0px 0px #00E6F6;
+    outline: transparent;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.button-49:after {
+    --slice-0: inset(50% 50% 50% 50%);
+    --slice-1: inset(80% -6px 0 0);
+    --slice-2: inset(50% -6px 30% 0);
+    --slice-3: inset(10% -6px 85% 0);
+    --slice-4: inset(40% -6px 43% 0);
+    --slice-5: inset(80% -6px 5% 0);
+  
+    content: 'ALTERNATE TEXT';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
+    text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+    clip-path: var(--slice-0);
+}
+
+.button-49:hover:after {
+    animation: glitch 1s forwards;
+}
+
+.flipped {
+    transform: scaleX(-1);
+}
+
+.roblox-text {
+    display: inline-block; 
+    transform: scaleX(-1); 
+}
+
+.flipped .button-49:before {
+    transform: scaleX(-1);
+    content: 'Team Roblox';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scaleX(-1);
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+}
+
+@keyframes glitch {
+    0% {
+        clip-path: var(--slice-1);
+        transform: translate(-20px, -10px);
+    }
+    10% {
+        clip-path: var(--slice-3);
+        transform: translate(10px, 10px);
+    }
+    20% {
+        clip-path: var(--slice-1);
+        transform: translate(-10px, 10px);
+    }
+    30% {
+        clip-path: var(--slice-3);
+        transform: translate(0px, 5px);
+    }
+    40% {
+        clip-path: var(--slice-2);
+        transform: translate(-5px, 0px);
+    }
+    50% {
+        clip-path: var(--slice-3);
+        transform: translate(5px, 0px);
+    }
+    60% {
+        clip-path: var(--slice-4);
+        transform: translate(5px, 10px);
+    }
+    70% {
+        clip-path: var(--slice-2);
+        transform: translate(-10px, 10px);
+    }
+    80% {
+        clip-path: var(--slice-5);
+        transform: translate(20px, -10px);
+    }
+    90% {
+        clip-path: var(--slice-1);
+        transform: translate(-10px, 0px);
+    }
+    100% {
+        clip-path: var(--slice-1);
+        transform: translate(0);
+    }
+}
+
+.copyright-container {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+}
+
+.copyright-container .copyright-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+@media (max-width: 767px) {
+    body {
+        background-image: url('img/mobile_bg.png');
+    }
+
+    .button-container {
+        top: 50%;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-button,
+    .right-button {
+        width: 100%;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .button-49 {
+        width: 250px;
+        height: 120px;
+        line-height: 120px;
+        font-size: 28px;
+    }
+
+    .button-49:after {
+        width: 250px;
+        height: 120px;
+    }
+
+    .flipped .button-49 {
+        transform: scaleX(-1);
+    }
+
+    .flipped .button-49:before {
+        transform: scaleX(-1);
+        content: 'Team Roblox';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scaleX(-1);
+        writing-mode: vertical-lr;
+        text-orientation: mixed;
+    }
+
+    .copyright-container {
+        bottom: 5px;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+        padding: 10px;
+    }
+}
